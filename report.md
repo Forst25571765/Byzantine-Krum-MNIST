@@ -134,7 +134,7 @@ def krum_aggregation(gradients, f):
 
 - **基准线 (FedAvg Clean)**：在无攻击情况下，取所有梯度的平均值是最优的无偏估计，因此 FedAvg 表现最佳。
 - **Krum 的损耗**：可以看到 Krum 在 Clean 环境下的准确率略低于 FedAvg。这是因为 Krum 即使在没有坏人时，也只选了一个向量，放弃了聚合带来的降噪增益。
-- **Multi-Krum**：Multi-Krum 表现优于 Krum，但仍然弱于 FedAvg。Multi-Krum 通过在完全的平均聚合与健壮性中进行了权衡，在安全性与收敛速度上取得了平衡。这证明了 Multi-Krum 是一种更通用的方案。
+- **Multi-Krum**：在三种聚合方法均收敛后，Multi-Krum 与 FedAvg 找到了损失更小的位置，而 Krum 由于丢失了较多信息，损失更高。Multi-Krum 通过在完全的平均聚合与健壮性中进行了权衡，在安全性与收敛速度上取得了平衡。这证明了 Multi-Krum 是一种更通用的方案。
 
 ---
 
